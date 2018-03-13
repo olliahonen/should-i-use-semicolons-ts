@@ -6,6 +6,10 @@ export default class Bike {
   }
 
   pedal() {
-    console.log(`I'm riding my ${this.color} bike!`);
+    console.log(`I'm riding my ${this.color} bike...`);
+  }
+
+  shout() {
+    return adjective => console.log(`My ${this.color} bike is so ${adjective || this.color}!`)
   }
 }
