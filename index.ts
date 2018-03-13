@@ -1,53 +1,22 @@
-import Bike from './bike'
+import {example1, example1WithSemis} from './example1';
+import {example2, example2WithSemis} from './example2';
 
-function logWithTimestamp(data: any) {
-  console.log(`${new Date()}: ${data}`)
-  return data
-}
-
-function thisHasUnexpectedBehaviourDueToSimpleProgrammerError() {
-  const log = logWithTimestamp
-
-  (new Bike('fuchsia')).shout()
-
-  log('end')
-}
-
-function thisIsRuntimeError1() {
-  const log = logWithTimestamp
-
-  (new Bike('green')).pedal()
-
-  log('end 1')
-}
-
-const rgb = ['red', 'green', 'blue',]
-
-function thisIsRuntimeError2() {
-  const bikeColors = rgb
-
-  ['purple', 'pink'].forEach(color => (new Bike(color)).pedal())
-
-  logWithTimestamp(bikeColors)
-}
-
-console.log('EXAMPLE 1')
+console.log('\nEXAMPLE 1');
 try {
-  thisHasUnexpectedBehaviourDueToSimpleProgrammerError()
+  example1();
 } catch (e) {
-  console.error(e)
+  console.error(e);
 }
 
-console.log('EXAMPLE 2')
+console.log('\nEXAMPLE 1 WITH SEMICOLONS');
 try {
-  thisIsRuntimeError1()
+  example1WithSemis();
 } catch (e) {
-  console.error(e)
+  console.error(e);
 }
 
-console.log('EXAMPLE 3')
-try {
-  thisIsRuntimeError2()
-} catch (e) {
-  console.error(e)
-}
+console.log('\nEXAMPLE 2');
+example2();
+
+console.log('\nEXAMPLE 2 WITH SEMICOLONS');
+example2WithSemis();
