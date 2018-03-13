@@ -2,9 +2,10 @@ import Bike from './bike'
 
 function logWithTimestamp(data: any) {
   console.log(`${new Date()}: ${data}`)
+  return data
 }
 
-function thisIsACompilerError() {
+function thisIsRuntimeError1() {
   const log = logWithTimestamp
 
   (new Bike('green')).pedal()
@@ -14,7 +15,7 @@ function thisIsACompilerError() {
 
 const rgb = ['red', 'green', 'blue',]
 
-function thisIsARuntimeError() {
+function thisIsRuntimeError2() {
   const bikeColors = rgb
 
   ['purple', 'pink'].forEach(color => (new Bike(color)).pedal())
@@ -22,4 +23,6 @@ function thisIsARuntimeError() {
   logWithTimestamp(bikeColors)
 }
 
-thisIsARuntimeError()
+thisIsRuntimeError1()
+
+thisIsRuntimeError2()
