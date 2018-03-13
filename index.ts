@@ -10,11 +10,7 @@ try {
 }
 
 console.log('\nEXAMPLE 1 WITH SEMICOLONS');
-try {
-  example1WithSemis();
-} catch (e) {
-  console.error(e);
-}
+example1WithSemis();
 
 console.log('\nEXAMPLE 2');
 example2();
