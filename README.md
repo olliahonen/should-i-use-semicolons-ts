@@ -1,6 +1,6 @@
 # Should I use semicolons in TypeScript?
 
-What breaks if you just omit all the end-of-line semicolons (`;`) in TypeScript?
+TypeScript is susceptible to [the same](https://standardjs.com/rules.html#semicolons) [issues](https://hackernoon.com/an-open-letter-to-javascript-leaders-regarding-no-semicolons-82cec422d67d) as JavaScript if you simply omit all the end-of-line semicolons (`;`).
 
 ## How to run
 
