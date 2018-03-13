@@ -22,7 +22,7 @@ No errors are thrown either way.
 
 ## Summary
 
-**There are some programming mistakes that turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](example2.ts).
+**There are some programming mistakes that may turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](example2.ts).
 
 **Some realistically practical programs which work perfectly fine, exhibit unexpected and incorrect behaviour after removing the semicolons. Without any compile or runtime errors.** See [example 3](example3.ts).
 
