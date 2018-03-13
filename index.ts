@@ -4,8 +4,8 @@ function logWithTimestamp(data: any) {
   console.log(`${new Date()}: ${data}`)
 }
 
-function compilerError() {
-  const log = logWithTimestamp;
+function thisIsACompilerError() {
+  const log = logWithTimestamp
 
   (new Bike('green')).pedal()
 
@@ -21,7 +21,5 @@ function runtimeError() {
 
   logWithTimestamp(bikeColors)
 }
-
-compilerError()
 
 runtimeError()
