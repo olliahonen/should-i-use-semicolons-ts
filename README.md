@@ -14,9 +14,9 @@ With semicolons, the program works as one would most likely expect.
 
 ## Example 2
 
-[Example 2](example2.ts) *does* hold a function reference in variable `log`, but the referred function is not the one with the timestamping. Instead, the final `log('end')` statement prints `My fuchsia bike is so end!` from class `Bike`.
+[Example 2](example2.ts) *does* hold a function reference in variable `log`, but the referred function is not the one with the timestamping. Instead, the final `log('end')` statement prints `My fuchsia bike is so end!` from class `Bike`. This sort of mistake could easily be overlooked, depending on the actual impact of calling the wrong function.
 
-Even with semicolons, this program contains a small bug: The line with the `.shout()` call does not print out anything because `shout` returns a function, and that function is not called at all. It's a subtle mistake, and could easily be overlooked.
+Even with semicolons, this program contains a bug: The line with the `.shout()` call does not print out anything because `shout` returns a function, and that function is not called at all.
 
 No errors are thrown either way.
 
