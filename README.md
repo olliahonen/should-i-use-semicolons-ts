@@ -8,9 +8,9 @@ This repository provides some examples on how things could go wrong, in TypeScri
 
 ## Summary
 
-I have not been able to come up with a practical example which would a) work just fine with semicolons, *and* b) exhibit unexpected behaviour *without throwing an error* after only removing the semicolons. Code that breaks without semicolons usually seems so broken that it throws.
+**There are some programming mistakes that turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](example2.ts).
 
-However, it is clear that **there are some programming mistakes that turn from easy to detect to very hard to spot if you don't use semicolons.**
+**Some realistically practical programs which work perfectly fine, exhibit unexpected and incorrect behaviour after removing the semicolons. Without any compile or runtime errors.** See [example 3](example3.ts).
 
 So, should you use semicolons in TypeScript? I don't have an answer. You have to understand the pros and cons, and then decide for yourself.
 
