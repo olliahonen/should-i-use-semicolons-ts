@@ -4,6 +4,8 @@ TypeScript is susceptible to [the same](https://standardjs.com/rules.html#semico
 
 This repository provides some examples of how things could go wrong, in TypeScript.
 
+While writing the code, I noticed that the imperative programming style seems to be more prone to suffer from the omitted semicolon, compared to the functional style. You may be more likely to begin a statement with a `(` or a `[` if it's a side-effect inducing one rather than purely functional.
+
 ## How to run
 
 * Install Node.js
