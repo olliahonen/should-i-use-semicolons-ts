@@ -12,6 +12,14 @@ This repository provides some examples on how things could go wrong, in TypeScri
 
 With semicolons, the program works as one would most likely expect.
 
+## Example 2
+
+[Example 2](example2.ts) *does* hold a function reference in variable `log`, but the referred function is not the one with the timestamping. Instead, the final `log('end')` statement prints `My fuchsia bike is so end!` from class `Bike`.
+
+Even with semicolons, this program contains a small bug: The line with the `.shout()` call does not print out anything because `shout` returns a function, and that function is not called at all. It's a subtle mistake, and could easily be overlooked.
+
+No errors are thrown either way.
+
 ## Summary
 
 **There are some programming mistakes that turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](example2.ts).
