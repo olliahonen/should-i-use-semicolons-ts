@@ -14,7 +14,7 @@ function thisIsACompilerError() {
 
 const rgb = ['red', 'green', 'blue',]
 
-function runtimeError() {
+function thisIsARuntimeError() {
   const bikeColors = rgb
 
   ['purple', 'pink'].forEach(color => (new Bike(color)).pedal())
@@ -22,4 +22,4 @@ function runtimeError() {
   logWithTimestamp(bikeColors)
 }
 
-runtimeError()
+thisIsARuntimeError()
