@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "it": "tsc index.ts --module commonjs && node index.js"
   },
   "author": "Olli Ahonen",
   "license": "MIT"
