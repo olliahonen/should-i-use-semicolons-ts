@@ -58,9 +58,11 @@ Tue Mar 13 2018 17:09:08 GMT+0200 (EET): end
 
 [Example 3](src/example3.ts) works as you would expect with semicolons. It prints out a message from the `Bike` class for 'purple' and 'red'.
 
+<!--
 After removing the semicolons, the program prints out the words 'Cannondale' and 'Focus' in place of 'purple' and 'red'. In this case, `'purple', 'red'` is a [comma expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator).
 
 No errors are thrown either way.
+-->
 
 **Output:**
 
@@ -80,7 +82,9 @@ I'm riding my red bike...
 
 **There are some programming mistakes that may turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](src/example2.ts).
 
+<!--
 **Some realistically practical programs which work perfectly fine, exhibit unexpected and incorrect behaviour after removing the semicolons. Without any compile or runtime errors.** See [example 3](src/example3.ts).
+-->
 
 So, should you use semicolons in TypeScript? I don't have an answer. You have to understand the pros and cons, and then decide for yourself.
 
