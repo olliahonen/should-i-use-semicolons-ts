@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "it": "tsc index.ts --module commonjs && node index.js"
+    "it": "tsc src/index.ts --module commonjs --outdir dist/ && node dist/index.js"
   },
   "author": "Olli Ahonen",
   "license": "MIT"

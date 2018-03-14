@@ -8,7 +8,7 @@ This repository provides some examples on how things could go wrong, in TypeScri
 
 ## Example 1
 
-[Example 1](example1.ts) results in a runtime error without the semicolons. Variable `log` does not refer to a function, because the `(new Bike(...` line has already executed it.
+[Example 1](src/example1.ts) results in a runtime error without the semicolons. Variable `log` does not refer to a function, because the `(new Bike(...` line has already executed it.
 
 With semicolons, the program works as one would most likely expect.
 
@@ -37,7 +37,7 @@ Tue Mar 13 2018 17:09:08 GMT+0200 (EET): end 1
 
 ## Example 2
 
-Without semicolons, [example 2](example2.ts) does hold a function reference in variable `log`, but the referred function is not the one with the timestamping. Instead, the final `log('end')` statement prints `My fuchsia bike is so end!` from class `Bike`. This sort of mistake could easily be overlooked, depending on the actual impact of calling the wrong function.
+Without semicolons, [example 2](src/example2.ts) does hold a function reference in variable `log`, but the referred function is not the one with the timestamping. Instead, the final `log('end')` statement prints `My fuchsia bike is so end!` from class `Bike`. This sort of mistake could easily be overlooked, depending on the actual impact of calling the wrong function.
 
 Even with semicolons, this program contains a bug: The line with the `.shout()` call does not print out anything because `shout` returns a function, and that function is not called at all.
 
@@ -56,7 +56,7 @@ Tue Mar 13 2018 17:09:08 GMT+0200 (EET): end
 
 ## Example 3
 
-[Example 3](example3.ts) works as you would expect with semicolons. It prints out a message from the `Bike` class for 'purple' and 'red'.
+[Example 3](src/example3.ts) works as you would expect with semicolons. It prints out a message from the `Bike` class for 'purple' and 'red'.
 
 After removing the semicolons, the program prints out the words 'Cannondale' and 'Focus' in place of 'purple' and 'red'. In this case, `'purple', 'red'` is a [comma expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator).
 
@@ -78,9 +78,9 @@ I'm riding my red bike...
 
 ## Summary
 
-**There are some programming mistakes that may turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](example2.ts).
+**There are some programming mistakes that may turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](src/example2.ts).
 
-**Some realistically practical programs which work perfectly fine, exhibit unexpected and incorrect behaviour after removing the semicolons. Without any compile or runtime errors.** See [example 3](example3.ts).
+**Some realistically practical programs which work perfectly fine, exhibit unexpected and incorrect behaviour after removing the semicolons. Without any compile or runtime errors.** See [example 3](src/example3.ts).
 
 So, should you use semicolons in TypeScript? I don't have an answer. You have to understand the pros and cons, and then decide for yourself.
 
