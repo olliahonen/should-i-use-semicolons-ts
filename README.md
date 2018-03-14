@@ -89,3 +89,8 @@ So, should you use semicolons in TypeScript? I don't have an answer. You have to
 * Install Node.js
 * `npm install -g tsc`
 * `npm run it`
+
+## How to lint
+
+* `npm install -g tslint typescript`
+* `npm run lint`
