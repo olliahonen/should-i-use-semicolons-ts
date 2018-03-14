@@ -12,23 +12,7 @@ This repository provides some examples on how things could go wrong, in TypeScri
 
 With semicolons, the program works as one would most likely expect.
 
-## Example 2
-
-Without semicolons, [example 2](example2.ts) does hold a function reference in variable `log`, but the referred function is not the one with the timestamping. Instead, the final `log('end')` statement prints `My fuchsia bike is so end!` from class `Bike`. This sort of mistake could easily be overlooked, depending on the actual impact of calling the wrong function.
-
-Even with semicolons, this program contains a bug: The line with the `.shout()` call does not print out anything because `shout` returns a function, and that function is not called at all.
-
-No errors are thrown either way.
-
-## Example 3
-
-[Example 3](example3.ts) works as you would expect with semicolons. It prints out a message from the `Bike` class for 'purple' and 'red'.
-
-After removing the semicolons, the program prints out the words 'Cannondale' and 'Focus' in place of 'purple' and 'red'. In this case, `'purple', 'red'` is a [comma expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator).
-
-No errors are thrown either way.
-
-## Full output for all examples
+**Output:**
 
 ```
 EXAMPLE 1
@@ -49,14 +33,38 @@ TypeError: log is not a function
 EXAMPLE 1 WITH SEMICOLONS
 I'm riding my green bike...
 Tue Mar 13 2018 17:09:08 GMT+0200 (EET): end 1
+```
 
+## Example 2
+
+Without semicolons, [example 2](example2.ts) does hold a function reference in variable `log`, but the referred function is not the one with the timestamping. Instead, the final `log('end')` statement prints `My fuchsia bike is so end!` from class `Bike`. This sort of mistake could easily be overlooked, depending on the actual impact of calling the wrong function.
+
+Even with semicolons, this program contains a bug: The line with the `.shout()` call does not print out anything because `shout` returns a function, and that function is not called at all.
+
+No errors are thrown either way.
+
+**Output:**
+
+```
 EXAMPLE 2
 Tue Mar 13 2018 17:09:08 GMT+0200 (EET): [object Object]
 My fuchsia bike is so end!
 
 EXAMPLE 2 WITH SEMICOLONS
 Tue Mar 13 2018 17:09:08 GMT+0200 (EET): end
+```
 
+## Example 3
+
+[Example 3](example3.ts) works as you would expect with semicolons. It prints out a message from the `Bike` class for 'purple' and 'red'.
+
+After removing the semicolons, the program prints out the words 'Cannondale' and 'Focus' in place of 'purple' and 'red'. In this case, `'purple', 'red'` is a [comma expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator).
+
+No errors are thrown either way.
+
+**Output:**
+
+```
 EXAMPLE 3
 I'm riding my Cannondale bike...
 I'm riding my Focus bike...
