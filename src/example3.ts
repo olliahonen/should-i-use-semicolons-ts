@@ -1,6 +1,6 @@
 import Bike from './bike';
 
-const bikesForSale = {'red': ['Cannondale', 'Focus'], 'blue': ['Giant']};
+const bikesForSale = {red: ['Cannondale', 'Focus'], blue: ['Giant']};
 
 export function example3() {
   const mikesGarage = bikesForSale

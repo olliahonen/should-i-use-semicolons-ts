@@ -1,15 +1,15 @@
 export default class Bike {
-  color: string;
+  private color: string;
 
   constructor(color: string) {
     this.color = color;
   }
 
-  pedal() {
+  public pedal() {
     console.log(`I'm riding my ${this.color} bike...`);
   }
 
-  shout() {
+  public shout() {
     return adjective => console.log(`My ${this.color} bike is so ${adjective || this.color}!`)
   }
 }
