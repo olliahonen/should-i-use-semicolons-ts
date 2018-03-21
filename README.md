@@ -94,7 +94,7 @@ I have not been able to come up with a realistically practical example which wou
     - TypeScript compilation error, or
     - Runtime error
 
-It seems that it's quite unlikely to be bit by the omitted semicolons issues in JavaScript, and even more so in TypeScript, because of the additional safeguards provided by the compiler.
+It seems that the issues due to omitted semicolons are quite unlikely to bite you in JavaScript, and even more so in TypeScript, because of the additional safeguards provided by the compiler.
 
 However, some mistakes do slip through, and **there are some programming mistakes that may turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](src/example2.ts).
 
