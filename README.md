@@ -54,9 +54,49 @@ EXAMPLE 2 WITH SEMICOLONS
 Tue Mar 13 2018 17:09:08 GMT+0200 (EET): end
 ```
 
+## Example 3
+
+This example does not pass the TypeScript compilation step, so I will include it inline here:
+```
+import Bike from './bike';
+
+const bikesForSale = {red: ['Cannondale', 'Focus'], blue: ['Giant']};
+
+export function example3() {
+  const mikesGarage = bikesForSale
+
+  ['purple', 'red'].forEach(color => (new Bike(color)).pedal())
+
+  console.log(mikesGarage)
+}
+```
+
+The `['purple', 'red']` part is interpreted as accessing the `bikesForSale` object, and in this interpretation, `'purple', 'red'` is a [comma expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator). In JavaScript this would fly, and the mistake may go unnoticed.
+
+In TypeScript however, the compiler reports an error for this: `TS2695: Left side of comma operator is unused and has no side effects.`.
+
+Adding semicolons to the end of each line makes the program work as one would expect.
+
+## Linter
+
+Linters are great at catching mistakes in JavaScript, and to a large degree in TypeScript, as well. For instance, with [TSLint's](https://palantir.github.io/tslint/) default configuration, the linter detects an [unused expression](https://palantir.github.io/tslint/rules/no-unused-expression/) in example 3 at `'purple'`.
+
+### How about adding a linter rule which bans starting a line with any of the problematic characters?
+
+WORK IN PROGRESS
+
 ## Summary
 
-**There are some programming mistakes that may turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](src/example2.ts).
+I have not been able to come up with a realistically practical example which would:
+  - work just fine with semicolons, and
+  - exhibit unexpected behaviour *without* one of:
+    - Linter error (sensibly configured), or
+    - TypeScript compilation error, or
+    - Runtime error
+
+It seems that it's quite unlikely to be bit by the omitted semicolons issues in JavaScript, and even more so in TypeScript, because of the additional safeguards provided by the compiler.
+
+However, some mistakes do slip through, and **there are some programming mistakes that may turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](src/example2.ts).
 
 So, should you use semicolons in TypeScript? I don't have an answer. You have to understand the pros and cons, and then decide for yourself.
 
