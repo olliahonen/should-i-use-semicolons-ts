@@ -107,7 +107,7 @@ I have not been able to come up with a realistically practical example which wou
 
 It seems that the issues due to omitted semicolons are quite unlikely to bite you in JavaScript, and even more so in TypeScript, because of the additional safeguards provided by the compiler.
 
-However, some mistakes do slip through (see [example 2](src/example2.ts)), which why you should **add [this one linter rule](https://github.com/buzinas/tslint-eslint-rules/blob/master/src/docs/rules/noUnexpectedMultilineRule.md) and achieve basically full protection.**
+However, some mistakes do slip through (see [example 2](src/example2.ts)), which is why you should **add [this one linter rule](https://github.com/buzinas/tslint-eslint-rules/blob/master/src/docs/rules/noUnexpectedMultilineRule.md) and achieve basically full protection.**
 
 ### So, should you use semicolons in TypeScript?
 
