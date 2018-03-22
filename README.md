@@ -6,6 +6,8 @@ TypeScript is susceptible to [the same](https://standardjs.com/rules.html#semico
 
 This repository provides a brief tour of the situation, with some examples on how things could go wrong, in TypeScript, as well as a good mitigation technique.
 
+---
+
 ## Example 1
 
 [Example 1](src/example1.ts) results in a runtime error without the semicolons. Variable `log` does not refer to a function, because the `(new Bike(...` line has already executed it.
