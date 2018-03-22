@@ -118,10 +118,15 @@ I don't have a universal answer to the question. You need to understand the pros
 ## Running the examples
 
 * Install Node.js
-* `npm install -g tsc`
+* `npm install -g typescript`
 * `npm run it`
 
 ### Linting
 
 * `npm install -g tslint typescript`
+* `npm install`
 * `npm run lint`
+
+---
+
+[License](LICENSE.md)
