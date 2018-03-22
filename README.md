@@ -4,7 +4,7 @@ TypeScript is susceptible to [the same](https://standardjs.com/rules.html#semico
 
 **In short, lines starting with (, [, or ` may fool you.**
 
-This repository provides some examples on how things could go wrong, in TypeScript.
+This repository provides a brief tour of the situation, with some examples on how things could go wrong, in TypeScript, as well as a good mitigation technique.
 
 ## Example 1
 
@@ -83,30 +83,45 @@ Linters are great at catching mistakes in JavaScript, and to a large degree in T
 
 ### How about adding a linter rule which bans starting a line with any of the problematic characters?
 
-WORK IN PROGRESS
+Not only is this a great idea, turns out adding it is also very easy with the help of [ESLint rules for TSLint](https://github.com/buzinas/tslint-eslint-rules) and its [no-unexpected-multiline](https://eslint.org/docs/rules/no-unexpected-multiline) rule! Enabling that rule makes the linter report on all of our little tricks:
+```
+ERROR: src/example1.ts[9, 15]: unexpected newline between function and ( of function call
+ERROR: src/example2.ts[9, 15]: unexpected newline between function and ( of function call
+```
+and
+```
+unexpected newline between object and [ of property access
+```
+in example 3 at the line starting with `['purple', 'red']`.
 
 ## Summary
 
 I have not been able to come up with a realistically practical example which would:
   - work just fine with semicolons, and
   - exhibit unexpected behaviour *without* one of:
-    - Linter error (sensibly configured), or
+    - Linter error (TSLint default configuration), or
     - TypeScript compilation error, or
     - Runtime error
 
 It seems that the issues due to omitted semicolons are quite unlikely to bite you in JavaScript, and even more so in TypeScript, because of the additional safeguards provided by the compiler.
 
-However, some mistakes do slip through, and **there are some programming mistakes that may turn from easy to detect to very hard to spot if you don't use semicolons.** See [example 2](src/example2.ts).
+However, some mistakes do slip through (see [example 2](src/example2.ts)), which why you should **add [this one linter rule](https://github.com/buzinas/tslint-eslint-rules/blob/master/src/docs/rules/noUnexpectedMultilineRule.md) and achieve basically full protection.**
 
-So, should you use semicolons in TypeScript? I don't have an answer. You have to understand the pros and cons, and then decide for yourself.
+### So, should you use semicolons in TypeScript?
 
-## How to run
+Using semicolons is the absolute safe choice, the downside is that they may be annoying to write and to read.
+
+You can also go without semicolons quite safely, but it isn't completely fool-proof: Even if you add the awesome linter rule, it is still possible to accidentally disable linting or misconfigure the linter later on.
+
+I don't have a universal answer to the question. You need to understand the pros and cons (hopefully this repo helps), and then decide for yourself.
+
+## Running the examples
 
 * Install Node.js
 * `npm install -g tsc`
 * `npm run it`
 
-## How to lint
+### Linting
 
 * `npm install -g tslint typescript`
 * `npm run lint`

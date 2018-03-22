@@ -8,5 +8,11 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "author": "Olli Ahonen",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/olliahonen/should-i-use-semicolons-ts",
+  "devDependencies": {
+    "tslint": "^5.9.1",
+    "tslint-eslint-rules": "^5.1.0",
+    "typescript": "^2.7.2"
+  }
 }
