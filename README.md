@@ -124,4 +124,5 @@ I don't have a universal answer to the question. You need to understand the pros
 ### Linting
 
 * `npm install -g tslint typescript`
+* `npm install`
 * `npm run lint`
