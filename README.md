@@ -6,6 +6,8 @@ TypeScript is susceptible to [the same](https://standardjs.com/rules.html#semico
 
 This repository provides a brief tour of the situation, with some examples on how things could go wrong, in TypeScript, as well as a good mitigation technique.
 
+If you're not that into the details, you can just **jump to the [conclusions](https://github.com/olliahonen/should-i-use-semicolons-ts#summary).**
+
 ---
 
 ## Example 1
@@ -100,7 +102,7 @@ in example 3 at the line starting with `['purple', 'red']`.
 
 I have not been able to come up with a realistically practical example which would:
   - work just fine with semicolons, and
-  - exhibit unexpected behaviour *without* one of:
+  - exhibit unexpected behaviour after removing semicolons *without* one of:
     - Linter error (TSLint default configuration), or
     - TypeScript compilation error, or
     - Runtime error
@@ -111,7 +113,7 @@ However, some mistakes do slip through (see [example 2](src/example2.ts)), which
 
 ### So, should you use semicolons in TypeScript?
 
-Using semicolons is the absolute safe choice, the downside is that they may be annoying to write and to read.
+Always using end-of-line semicolons is the absolute safe choice, the downside is that they may be annoying to write and to read.
 
 You can also go without semicolons quite safely, but it isn't completely fool-proof: Even if you add the awesome linter rule, it is still possible to accidentally disable linting or misconfigure the linter later on.
 
