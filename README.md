@@ -119,6 +119,8 @@ You can also go without semicolons quite safely, but it isn't completely fool-pr
 
 I don't have a universal answer to the question. You need to understand the pros and cons (hopefully this repo helps), and then decide for yourself.
 
+If you found this repository useful, please consider sharing it e.g. [by retweeting this](https://twitter.com/olliahonen/status/978237602565427200).
+
 ## Running the examples
 
 * Install Node.js
