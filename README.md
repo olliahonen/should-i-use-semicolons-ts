@@ -12,6 +12,31 @@ If you're not that into the details, you can just **jump to the [conclusions](ht
 
 ## Example 1
 
+```typescript
+import Bike from './bike';
+
+function logWithTimestamp(data: any) {
+  console.log(`${new Date()}: ${data}`);
+  return data;
+}
+
+export function example1() {
+  const log = logWithTimestamp
+
+  (new Bike('green')).pedal()
+
+  log('end 1') // TypeError: log is not a function
+}
+
+export function example1WithSemis() {
+  const log = logWithTimestamp;
+
+  (new Bike('green')).pedal();
+
+  log('end 1');
+}
+```
+
 [Example 1](src/example1.ts) results in a runtime error without the semicolons. Variable `log` does not refer to a function, because the `(new Bike(...` line has already executed it.
 
 With semicolons, the program works as one would most likely expect.
@@ -41,6 +66,31 @@ Tue Mar 13 2018 17:09:08 GMT+0200 (EET): end 1
 
 ## Example 2
 
+```typescript
+import Bike from './bike';
+
+function logWithTimestamp(data: any) {
+  console.log(`${new Date()}: ${data}`);
+  return data;
+}
+
+export function example2() {
+  const log = logWithTimestamp
+
+  (new Bike('fuchsia')).shout()
+
+  log('end')
+}
+
+export function example2WithSemis() {
+  const log = logWithTimestamp;
+
+  (new Bike('fuchsia')).shout(); // This is just a function that's never called
+
+  log('end');
+}
+```
+
 Without semicolons, [example 2](src/example2.ts) does hold a function reference in variable `log`, but the referred function is not the one with the timestamping. Instead, the final `log('end')` statement prints `My fuchsia bike is so end!` from class `Bike`. This sort of mistake could easily be overlooked, depending on the actual impact of calling the wrong function.
 
 Even with semicolons, this program contains a bug: The line with the `.shout()` call does not print out anything because `shout` returns a function, and that function is not called at all.
@@ -60,7 +110,6 @@ Tue Mar 13 2018 17:09:08 GMT+0200 (EET): end
 
 ## Example 3
 
-This example does not pass the TypeScript compilation step, so I will include it inline here:
 ```
 import Bike from './bike';
 
@@ -74,6 +123,7 @@ export function example3() {
   console.log(mikesGarage)
 }
 ```
+This example does not pass the TypeScript compilation step, so there's no separate file for it in this repo.
 
 The `['purple', 'red']` part is interpreted as accessing the `bikesForSale` object, and in this interpretation, `'purple', 'red'` is a [comma expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator). In JavaScript this would fly, and the mistake may go unnoticed.
 
